@@ -38,7 +38,7 @@ def screening_sales(conn):
     Include all screenings, even if tickets_sold is 0.
     Order results by tickets_sold descending.
     """
-    cursor - conn.cursor()
+    cursor = conn.cursor()
     cursor.execute("""
         SELECT screenings.screening_id, films.title, COUNT(ticket.ticket_id) AS tickets_sold
         FROM screenings

@@ -26,7 +26,7 @@ def customer_tickets(conn, customer_id):
         JOIN films ON screenings.film_id = films.film_id
         WHERE tickets.customer_id = ?
         ORDER BY films.title ASC
-    """, (customer_id))
+    """, (customer_id,))
     return cursor.fetchall()
 
     

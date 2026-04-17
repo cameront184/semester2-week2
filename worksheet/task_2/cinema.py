@@ -40,7 +40,7 @@ def screening_sales(conn):
     """
     cursor = conn.cursor()
     cursor.execute("""
-        SELECT screenings.screening_id, films.title, COUNT(ticket.ticket_id) AS tickets_sold
+        SELECT screenings.screening_id, films.title, COUNT(tickets.ticket_id) AS tickets_sold
         FROM screenings
         JOIN films ON screenings.film_id = films.film_id
         LEFT JOIN tickets ON screenings.screeninng_id = tickets.screening_id
